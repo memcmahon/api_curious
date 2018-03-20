@@ -4,7 +4,7 @@
     <div class="pt2 pb2">
       <p class="h2 m0 bold"><%= @github_user.name %></p>
       <p class="h3 m0 med-gray"><%= @github_user.nickname %></p>
-      <p class="mt3 med-gray">Backend Engineering Student at Turing School</p>
+      <p class="mt3 med-gray"><%= @github_user.bio %></p>
       <div class="border-top flex">
         <%= fa_icon "map-marker", class: "pt2 col-1"%>
         <p class="col-11 pt2 m0 med-gray"><%= @github_user.location %></p>
@@ -26,7 +26,7 @@
       </div>
       <div class="">
         <%= link_to "Stars", user_path(current_user), class: "pb2 text-decoration-none" %>
-        <span class="counter"><%= @github_user.stars_count %></span>
+        <span class="counter">##</span>
       </div>
       <div class="">
         <%= link_to "Followers", user_path(current_user), class: "pb2 text-decoration-none" %>
