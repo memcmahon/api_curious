@@ -1,0 +1,49 @@
+<section class="col-8 mx-auto mt3 flex">
+  <aside class="col-3">
+    <%= image_tag "profile_pic.jpg", class: "profile-pic rounded" %>
+    <div class="pt2 pb2">
+      <p class="h2 m0 bold"><%= current_user.name %></p>
+      <p class="h3 m0 med-gray"><%= current_user.nickname %></p>
+      <p class="mt3 med-gray">Backend Engineering Student at Turing School</p>
+      <div class="border-top flex">
+        <%= fa_icon "map-marker", class: "pt2 col-1"%>
+        <p class="col-11 pt2 m0 med-gray"> Denver, CO</p>
+      </div>
+      <div class="mt1 overflow-scroll flex">
+        <%= fa_icon "link", class: "col-1" %><div>
+        <a class="med-gray col-11" href="https://www.linkedin.com/in/meganemcmahon1/" >https://www.linkedin.com/in/meganemcmahon1/</a></div>
+      </div>
+    </div>
+  </aside>
+  <aside class="col-9 inline">
+    <div class="pt2 pb2 border-box border-bottom profile-links">
+      <div class="">
+        <%= link_to "Overview", user_path(current_user), class: "pb2 text-decoration-none" %>
+      </div>
+      <div class="">
+        <%= link_to "Repositories", user_path(current_user), class: "pb2 text-decoration-none" %>
+        <span class="counter">##</span>
+      </div>
+      <div class="">
+        <%= link_to "Stars", user_path(current_user), class: "pb2 text-decoration-none" %>
+        <span class="counter">##</span>
+      </div>
+      <div class="">
+        <%= link_to "Followers", user_path(current_user), class: "pb2 text-decoration-none" %>
+        <span class="counter">##</span>
+      </div>
+      <div class="">
+        <%= link_to "Following", user_path(current_user), class: "pb2 text-decoration-none" %>
+        <span class="counter">##</span>
+      </div>
+    </div>
+    <h4>Pinned Repositories</h4>
+    <div class="flex pinned-repos">
+      <% 6.times do |x| %>
+        <div class="m1 col-5 border mx-auto" style="min-height: 128px">
+
+        </div>
+      <% end %>
+    </div>
+  </aside>
+</section>
