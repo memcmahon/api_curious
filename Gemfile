@@ -36,6 +36,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'omniauth-github'
 gem 'pry'
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
