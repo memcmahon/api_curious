@@ -5,7 +5,6 @@ describe "user logs in and out" do
     stub_omniauth
     visit root_path
     click_link("Sign in with Github")
-    expect(page).to have_content("Megan McMahon")
     expect(page).to have_link("Logout")
 
     click_link("Logout")
