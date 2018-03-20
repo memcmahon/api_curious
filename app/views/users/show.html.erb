@@ -1,4 +1,4 @@
-<section class="col-8 mx-auto mt3">
+<section class="col-8 mx-auto mt3 flex">
   <aside class="col-3">
     <%= image_tag "profile_pic.jpg", class: "profile-pic rounded" %>
     <div class="pt2 pb2">
@@ -15,7 +15,35 @@
       </div>
     </div>
   </aside>
-  <aside class="col-5">
+  <aside class="col-9 inline">
+    <div class="pt2 pb2 border-box border-bottom profile-links">
+      <div class="">
+        <%= link_to "Overview", user_path(current_user), class: "pb2 text-decoration-none" %>
+      </div>
+      <div class="">
+        <%= link_to "Repositories", user_path(current_user), class: "pb2 text-decoration-none" %>
+        <span class="counter">##</span>
+      </div>
+      <div class="">
+        <%= link_to "Stars", user_path(current_user), class: "pb2 text-decoration-none" %>
+        <span class="counter">##</span>
+      </div>
+      <div class="">
+        <%= link_to "Followers", user_path(current_user), class: "pb2 text-decoration-none" %>
+        <span class="counter">##</span>
+      </div>
+      <div class="">
+        <%= link_to "Following", user_path(current_user), class: "pb2 text-decoration-none" %>
+        <span class="counter">##</span>
+      </div>
+    </div>
+    <h4>Pinned Repositories</h4>
+    <div class="flex pinned-repos">
+      <% 6.times do |x| %>
+        <div class="m1 col-5 border mx-auto" style="min-height: 128px">
 
+        </div>
+      <% end %>
+    </div>
   </aside>
 </section>

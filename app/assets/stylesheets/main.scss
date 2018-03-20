@@ -1,6 +1,7 @@
 $near-black: #24292e;
 $light-gray: #A7A6B3;
 $med-gray: #666;
+$pale-gray: #e0e2e5;
 
 body {
   font: {
@@ -21,6 +22,14 @@ p {
   }
 }
 
+.profile-links {
+  a {
+    color: $med-gray
+  }
+  display: flex;
+  justify-content: space-around;
+}
+
 .profile-pic {
   max-width: 230px;
   max-height: 230px;
@@ -30,6 +39,18 @@ p {
   color: $med-gray
 }
 
-.border-top {
+.border-top .border-bottom {
   border-color: $light-gray;
+}
+
+.counter {
+  padding: 2px 5px;
+  font-size: 14px;
+  color: $med-gray;
+  background-color: $pale-gray;
+  border-radius: 20px;
+}
+
+.pinned-repos {
+  flex-wrap: wrap;
 }
