@@ -1,17 +1,17 @@
 <section class="col-8 mx-auto mt3 flex">
   <aside class="col-3">
-    <%= image_tag "profile_pic.jpg", class: "profile-pic rounded" %>
+    <%= image_tag "#{@github_user.avatar_url}", class: "profile-pic rounded" %>
     <div class="pt2 pb2">
-      <p class="h2 m0 bold"><%= current_user.name %></p>
-      <p class="h3 m0 med-gray"><%= current_user.nickname %></p>
-      <p class="mt3 med-gray">Backend Engineering Student at Turing School</p>
+      <p class="h2 m0 bold"><%= @github_user.name %></p>
+      <p class="h3 m0 med-gray"><%= @github_user.nickname %></p>
+      <p class="mt3 med-gray"><%= @github_user.bio %></p>
       <div class="border-top flex">
         <%= fa_icon "map-marker", class: "pt2 col-1"%>
-        <p class="col-11 pt2 m0 med-gray"> Denver, CO</p>
+        <p class="col-11 pt2 m0 med-gray"><%= @github_user.location %></p>
       </div>
       <div class="mt1 overflow-scroll flex">
         <%= fa_icon "link", class: "col-1" %><div>
-        <a class="med-gray col-11" href="https://www.linkedin.com/in/meganemcmahon1/" >https://www.linkedin.com/in/meganemcmahon1/</a></div>
+        <a class="med-gray col-11" href=<%= @github_user.blog_url %> ><%= @github_user.blog_url %></a></div>
       </div>
     </div>
   </aside>
@@ -22,7 +22,7 @@
       </div>
       <div class="">
         <%= link_to "Repositories", user_path(current_user), class: "pb2 text-decoration-none" %>
-        <span class="counter">##</span>
+        <span class="counter"><%= @github_user.repositories_count %></span>
       </div>
       <div class="">
         <%= link_to "Stars", user_path(current_user), class: "pb2 text-decoration-none" %>
@@ -30,11 +30,11 @@
       </div>
       <div class="">
         <%= link_to "Followers", user_path(current_user), class: "pb2 text-decoration-none" %>
-        <span class="counter">##</span>
+        <span class="counter"><%= @github_user.followers_count %></span>
       </div>
       <div class="">
         <%= link_to "Following", user_path(current_user), class: "pb2 text-decoration-none" %>
-        <span class="counter">##</span>
+        <span class="counter"><%= @github_user.following_count %></span>
       </div>
     </div>
     <h4>Pinned Repositories</h4>

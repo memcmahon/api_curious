@@ -19,9 +19,6 @@ RSpec.describe User, type: :model do
     user = User.first
 
     expect(user.uid).to eq("123456")
-    expect(user.email).to eq("meganmcmahon88@gmail.com")
-    expect(user.nickname).to eq("memcmahon")
-    expect(user.name).to eq("Megan McMahon")
     expect(user.token).to eq("1234abcd")
   end
 end
