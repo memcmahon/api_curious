@@ -1,12 +1,10 @@
 class User < ApplicationRecord
 
   def self.from_omniauth(auth_info)
-    where(uid: auth_info[:uid]).first_or_create.update do |user|
-      user.uid = auth_info[:uid]
-      user.nickname = auth_info[:info][:nickname]
-      user.name = auth_info[:info][:name]
-      user.email = auth_info[:info][:email]
-      user.token = auth_info[:credentials][:token]
+    if where(uid: auth_info[:uid])
+      where(uid: auth_info[:uid]).update(token: auth_info[:credentials][:token])
+    else
+      create(uid: auth_info[:uid], token: auth_info[:credentials][:token])
     end
   end
 end
