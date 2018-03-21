@@ -22,4 +22,8 @@ class GithubUser
     @followers_count = attrs[:followers]
     @following_count = attrs[:following]
   end
+
+  def self.create(token)
+    new(GithubService.user_attrs(token))
+  end
 end
