@@ -26,4 +26,17 @@ class GithubUser
   def self.create(token)
     new(GithubService.user_attrs(token), GithubService.stars_count(token))
   end
+
+  def commit_feed(token)
+    conn = Faraday.new("https://api.github.com/users/#{nickname}/events")
+    response = conn.get do |req|
+      req.params["access_token"] = token
+    end
+    commits = JSON.parse(response.body, symbolize_names: true).map do |event|
+      if event[:type] == "PushEvent"
+        event[:payload][:commits]
+      end
+    end
+    binding.pry
+  end
 end
