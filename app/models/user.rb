@@ -6,5 +6,6 @@ class User < ApplicationRecord
     else
       create(uid: auth_info[:uid], token: auth_info[:credentials][:token])
     end
+      find_by(uid: auth_info[:uid])
   end
 end

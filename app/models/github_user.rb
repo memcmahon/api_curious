@@ -10,7 +10,7 @@ class GithubUser
               :followers_count,
               :following_count
 
-  def initialize(attrs = {})
+  def initialize(attrs = {}, stars_count = 0)
     @name = attrs[:name]
     @avatar_url = attrs[:avatar_url]
     @nickname = attrs[:login]
@@ -18,8 +18,12 @@ class GithubUser
     @location = attrs[:location]
     @blog_url = attrs[:blog]
     @repositories_count = attrs[:public_repos]
-    @stars_count = '##'
+    @stars_count = stars_count
     @followers_count = attrs[:followers]
     @following_count = attrs[:following]
+  end
+
+  def self.create(token)
+    new(GithubService.user_attrs(token), GithubService.stars_count(token))
   end
 end
