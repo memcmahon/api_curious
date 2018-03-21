@@ -11,6 +11,12 @@ describe "user logs in and out" do
     stub_request(:get, "https://api.github.com/user/starred?access_token=12345").
       to_return(status: 200, body: user_stars_json_response, headers: {})
 
+    user_commits_json_response = File.open("./spec/fixtures/user_commits.json")
+
+    stub_request(:get, "https://api.github.com/search/commits?access_token=12345&q=author:memcmahon committer-date:>#{DateTime.now.prev_day(7).strftime("%Y-%m-%d")}")
+      .with(headers: {'Accept'=>'application/vnd.github.cloak-preview+json'})
+      .to_return(status: 200, body: user_commits_json_response, headers: {})
+
     stub_omniauth
 
     visit root_path
@@ -36,16 +42,17 @@ describe "user logs in and out" do
     user_json_response = File.open("./spec/fixtures/user.json")
     user_stars_json_response = File.open("./spec/fixtures/user_stars.json")
 
-    stub_request(:get, "https://api.github.com/user?access_token=12345").
-      to_return(status: 200, body: user_json_response, headers: {})
+    stub_request(:get, "https://api.github.com/user?access_token=12345")
+      .to_return(status: 200, body: user_json_response, headers: {})
 
-    stub_request(:get, "https://api.github.com/user/starred?access_token=12345").
-      to_return(status: 200, body: user_stars_json_response, headers: {})
-      
+    stub_request(:get, "https://api.github.com/user/starred?access_token=12345")
+      .to_return(status: 200, body: user_stars_json_response, headers: {})
+
     user_commits_json_response = File.open("./spec/fixtures/user_commits.json")
 
-    stub_request(:get, "https://api.github.com/search?q=user:memcmahon commit-date:>2018-03-14&access_token=12345").
-      to_return(status: 200, body: user_commits_json_response, headers: {})
+    stub_request(:get, "https://api.github.com/search/commits?access_token=12345&q=author:memcmahon committer-date:>#{DateTime.now.prev_day(7).strftime("%Y-%m-%d")}")
+      .with(headers: {'Accept'=>'application/vnd.github.cloak-preview+json'})
+      .to_return(status: 200, body: user_commits_json_response, headers: {})
 
     stub_omniauth
 

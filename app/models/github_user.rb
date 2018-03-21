@@ -26,4 +26,8 @@ class GithubUser
   def self.create(token)
     new(GithubService.user_attrs(token), GithubService.stars_count(token))
   end
+
+  def recent_commits(current_user)
+    CommitSearchResult.new(GithubService.user_commits(current_user.token, nickname)).all_commits
+  end
 end

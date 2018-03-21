@@ -37,12 +37,14 @@
         <span class="counter"><%= @github_user.following_count %></span>
       </div>
     </div>
-    <h4>Pinned Repositories</h4>
-    <div class="flex pinned-repos">
-      <% 6.times do |x| %>
-        <div class="m1 col-5 border mx-auto" style="min-height: 128px">
-
-        </div>
+    <h4>Recent Commits (within the last 7 days)</h4>
+    <div class="commits">
+      <% @github_user.recent_commits(current_user).each do |commit| %>
+        <ul>
+          <li><%= commit.message %></li>
+          <li><%= commit.date %></li>
+          <li><%= commit.repository %></li>
+        </ul>
       <% end %>
     </div>
   </aside>
