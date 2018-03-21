@@ -26,7 +26,7 @@
       </div>
       <div class="">
         <%= link_to "Stars", user_path(current_user), class: "pb2 text-decoration-none" %>
-        <span class="counter">##</span>
+        <span class="counter"><%= @github_user.stars_count %></span>
       </div>
       <div class="">
         <%= link_to "Followers", user_path(current_user), class: "pb2 text-decoration-none" %>
