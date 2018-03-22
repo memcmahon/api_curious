@@ -2,11 +2,16 @@ require 'rails_helper'
 
 feature "User can see a list of all users they are following" do
   let(:user) { build(:user) }
-  
+
   before (:each) do
     stub_omniauth
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    json_response = File.open("./spec/fixtures/user_following.json")
+
+    stub_request(:get, "https://api.github.com/user/following?access_token=12345")
+      .to_return(status: 200, body: json_response, headers: {})
   end
 
   describe "they visit user/following path" do

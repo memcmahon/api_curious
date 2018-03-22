@@ -1,6 +1,6 @@
 class FollowingController < ApplicationController
   def index
-    @following = FollowingList.new(current_user.token)
+    @following = Following.new(current_user.token).all
   end
 
   def show
