@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   resources :users, only: [:show] do
-    resources :following, only: [:index, :show]
+    resources :following, only: [:index]
+    get '/following/:username', to: 'following#show'
   end
 end

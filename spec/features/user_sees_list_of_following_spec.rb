@@ -18,8 +18,10 @@ feature "User can see a list of all users they are following" do
     it "they can see a list of their followers" do
       visit user_following_index_path(user)
 
-      expect(page).to have_content("corneliusellen")
-      expect(page).to have_content("annaroyer")
+      expect(page).to have_css("img[src='https://avatars2.githubusercontent.com/u/24374609?v=4']")
+      expect(page).to have_css("img[src='https://avatars0.githubusercontent.com/u/26782839?v=4']")
+      # expect(page).to have_xpath("https://avatars2.githubusercontent.com/u/24374609?v=4")
+      # expect(page).to have_xpath("https://avatars0.githubusercontent.com/u/26782839?v=4")
     end
   end
 
