@@ -34,4 +34,14 @@ class GithubService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.event_pages(username)
+    response = Faraday.get("https://api.github.com/users/#{username}/events")
+    response.headers
+  end
+
+  def self.events(username, n)
+    response = Faraday.get("https://api.github.com/users/#{username}/events?page=#{n}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

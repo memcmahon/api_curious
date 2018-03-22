@@ -6,7 +6,7 @@
 
   <div class="flex">
     <% @following.each do |user| %>
-      <a class="center col-3 circle" href=<%="/users/#{current_user.id}/following/#{user.nickname}" %>>
+      <a class="center col-3 circle" href=<%="https://localhost:3000/users/#{current_user.id}/following/#{user.nickname}" %>>
           <%= image_tag user.avatar_url, class: "profile-pic circle" %>
       </a>
     <% end %>
