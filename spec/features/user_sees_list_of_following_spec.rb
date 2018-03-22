@@ -1,15 +1,17 @@
 require 'rails_helper'
 
 feature "User can see a list of all users they are following" do
+  let(:user) { build(:user) }
+  
   before (:each) do
     stub_omniauth
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(User.last)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
   end
 
   describe "they visit user/following path" do
     it "they can see a list of their followers" do
-      visit user_following_path(User.last)
+      visit user_following_index_path(user)
 
       expect(page).to have_content("corneliusellen")
       expect(page).to have_content("annaroyer")
