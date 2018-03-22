@@ -40,10 +40,9 @@
     <h4>Recent Commits (within the last 7 days)</h4>
     <div class="commits">
       <% @github_user.recent_commits(current_user).each do |commit| %>
-        <ul>
-          <li><%= commit.message %></li>
-          <li><%= commit.date %></li>
-          <li><%= commit.repository %></li>
+        <ul class="list-reset pl2"><h5 class="mb0"> <%= commit.message %> </h5>
+          <li class="pl2">Repository: <%= commit.repository %></li>
+          <li class="pl2">Date: <%= commit.date %></li>
         </ul>
       <% end %>
     </div>
