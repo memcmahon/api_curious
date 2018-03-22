@@ -1,0 +1,40 @@
+[
+    {
+        "login": "corneliusellen",
+        "id": 24374609,
+        "avatar_url": "https://avatars2.githubusercontent.com/u/24374609?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/corneliusellen",
+        "html_url": "https://github.com/corneliusellen",
+        "followers_url": "https://api.github.com/users/corneliusellen/followers",
+        "following_url": "https://api.github.com/users/corneliusellen/following{/other_user}",
+        "gists_url": "https://api.github.com/users/corneliusellen/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/corneliusellen/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/corneliusellen/subscriptions",
+        "organizations_url": "https://api.github.com/users/corneliusellen/orgs",
+        "repos_url": "https://api.github.com/users/corneliusellen/repos",
+        "events_url": "https://api.github.com/users/corneliusellen/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/corneliusellen/received_events",
+        "type": "User",
+        "site_admin": false
+    },
+    {
+        "login": "annaroyer",
+        "id": 26782839,
+        "avatar_url": "https://avatars0.githubusercontent.com/u/26782839?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/annaroyer",
+        "html_url": "https://github.com/annaroyer",
+        "followers_url": "https://api.github.com/users/annaroyer/followers",
+        "following_url": "https://api.github.com/users/annaroyer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/annaroyer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/annaroyer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/annaroyer/subscriptions",
+        "organizations_url": "https://api.github.com/users/annaroyer/orgs",
+        "repos_url": "https://api.github.com/users/annaroyer/repos",
+        "events_url": "https://api.github.com/users/annaroyer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/annaroyer/received_events",
+        "type": "User",
+        "site_admin": false
+    }
+]
