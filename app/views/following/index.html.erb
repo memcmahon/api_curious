@@ -1,0 +1,8 @@
+<h2>Following</h2>
+
+<h4>Click on an Image to View Recent Activity</h4>
+
+<% @following.each do |user| %>
+  <%= user.nickname %>
+  <%= user.avatar_url %>
+<% end %>
