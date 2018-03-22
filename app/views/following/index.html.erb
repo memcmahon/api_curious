@@ -1,8 +1,14 @@
-<h2>Following</h2>
+<section class="col-8 mx-auto">
 
-<h4>Click on an Image to View Recent Activity</h4>
+  <h2>Following</h2>
 
-<% @following.each do |user| %>
-  <%= user.nickname %>
-  <%= user.avatar_url %>
-<% end %>
+  <h4>Click on an Image to View Recent Activity</h4>
+
+  <div class="flex">
+    <% @following.each do |user| %>
+      <a class="center col-3 circle" href=<%="/users/#{current_user.id}/following/#{user.nickname}" %>>
+          <%= image_tag user.avatar_url, class: "profile-pic circle" %>
+      </a>
+    <% end %>
+  </div>
+</section>
